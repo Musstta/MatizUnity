@@ -4,5 +4,11 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Game.unity
+    guid: d40cc7591d818e3479b5411b3b34a98d
+  - enabled: 1
+    path: Assets/ColiseoEntrenamiento.unity
+    guid: b33cfe51af90d3e48bce1bbc7bbfdfec
   m_configObjects: {}
