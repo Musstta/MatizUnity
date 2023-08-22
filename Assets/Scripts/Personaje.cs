@@ -1,37 +1,52 @@
+
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 
 public class Personaje : MonoBehaviour
 {
-    [SerializeField] private float velocidad;
+    [SerializeField] private int velocidad = 5;
 
+    public Collider2D swordHitbox;
+    private Vector2 movement;
     private Rigidbody2D rig;
-    private Vector2 moveInput;
-    private Animator anim;
+    private Animator animator;
+
+    Collider2D swordCollider;
+    
 
     private void Awake()
     {
+        swordCollider = swordHitbox.GetComponentInChildren<Collider2D>();
         rig = GetComponent<Rigidbody2D>();
-        anim = GetComponentInChildren<Animator>();
+        animator = GetComponentInChildren<Animator>();
     }
 
-    void Update()
+    private void OnMovement(InputValue value)
     {
-        float moveX = Input.GetAxis("Horizontal");
-        float moveY = Input.GetAxis("Vertical");
-        moveInput = new Vector2(moveX, moveY).normalized;
+        movement = value.Get<Vector2>();
 
-        anim.SetFloat("Horizontal", moveX);
-        anim.SetFloat("Vertical", moveY);
-        anim.SetFloat("Speed", moveInput.sqrMagnitude);
+        if (movement.x != 0 || movement.y != 0)
+        {
+            animator.SetFloat("X", movement.x);
+            animator.SetFloat("Y", movement.y);
 
+            animator.SetBool("IsWalking", true);
+        }
+        else
+        {
+            animator.SetBool("IsWalking", false);
+        }
     }
 
+    private void OnFire() 
+    {
+        animator.SetTrigger("swordAttack");
+    }
 
     private void FixedUpdate()
     {
-        rig.MovePosition(rig.position + moveInput * velocidad * Time.fixedDeltaTime);
-        anim.SetFloat("Camina", Mathf.Abs(rig.velocity.magnitude));
+        rig.MovePosition(rig.position + movement * velocidad * Time.fixedDeltaTime);     
     }
 }

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7471469620485516786}
   - component: {fileID: 7471469620485516785}
   - component: {fileID: 7471469620485516784}
+  - component: {fileID: 3983834322255011846}
+  - component: {fileID: 5816711634717569365}
   m_Layer: 0
   m_Name: AnimacionPersonaje
   m_TagString: Player
@@ -25,14 +27,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7471469620485516787}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -7.8, y: -30.2, z: 0}
+  m_LocalRotation: {x: -0.015730068, y: -0, z: -0, w: 0.9998763}
+  m_LocalPosition: {x: 0.033, y: 0.016, z: 0.133}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 7471469620810727281}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -1.803, y: 0, z: 0}
 --- !u!212 &7471469620485516785
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -74,12 +76,12 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: d0f3bb0681867f244a6c0f00c062a158, type: 3}
+  m_Sprite: {fileID: 21300000, guid: b28139df1abb17e4380a2805a74c3aca, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 2.6666667, y: 2.6666667}
+  m_Size: {x: 1.6842105, y: 1.6842105}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
@@ -106,6 +108,46 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!61 &3983834322255011846
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471469620485516787}
+  m_Enabled: 0
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.8637268, y: -0.18965667}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 1.6842105, y: 1.6842105}
+    newSize: {x: 1.6842105, y: 1.6842105}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 0.80442274, y: 0.45724106}
+  m_EdgeRadius: 0
+--- !u!114 &5816711634717569365
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471469620485516787}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 84904e361e03d1044bfb7edab5bdcedb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  swordDamage: 1
+  swordCollider: {fileID: 3983834322255011846}
 --- !u!1 &7471469620810727283
 GameObject:
   m_ObjectHideFlags: 0
@@ -117,7 +159,8 @@ GameObject:
   - component: {fileID: 7471469620810727281}
   - component: {fileID: 7471469620810727287}
   - component: {fileID: 7471469620810727280}
-  - component: {fileID: 7471469620810727285}
+  - component: {fileID: 5466985286067276333}
+  - component: {fileID: 4005349276091655684}
   m_Layer: 0
   m_Name: Personaje
   m_TagString: Player
@@ -154,8 +197,8 @@ CapsuleCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.027248979, y: -0.63259673}
-  m_Size: {x: 0.4636762, y: 0.4636762}
+  m_Offset: {x: -0.0025513172, y: -0.6538824}
+  m_Size: {x: 0.5232768, y: 0.5658481}
   m_Direction: 0
 --- !u!50 &7471469620810727280
 Rigidbody2D:
@@ -178,7 +221,38 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 4
---- !u!114 &7471469620810727285
+--- !u!114 &5466985286067276333
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7471469620810727283}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 62899f850307741f2a39c98a8b639597, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Actions: {fileID: -944628639613478452, guid: b31bf7fac6341624fadf3f7f6dca9831,
+    type: 3}
+  m_NotificationBehavior: 0
+  m_UIInputModule: {fileID: 0}
+  m_DeviceLostEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_DeviceRegainedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ControlsChangedEvent:
+    m_PersistentCalls:
+      m_Calls: []
+  m_ActionEvents: []
+  m_NeverAutoSwitchControlSchemes: 0
+  m_DefaultControlScheme: 
+  m_DefaultActionMap: InGame
+  m_SplitScreenIndex: -1
+  m_Camera: {fileID: 0}
+--- !u!114 &4005349276091655684
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -190,4 +264,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6ddd8b96c82823f4e970c38cd187a53a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocidad: 3
+  velocidad: 5
+  swordhitbox: {fileID: 3983834322255011846}
